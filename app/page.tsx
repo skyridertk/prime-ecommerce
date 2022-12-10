@@ -1,57 +1,100 @@
 import Image from 'next/image'
 import styles from './page.module.css'
+import main_prime from "@/assets/hero-desktop_2000x.jpg"
+import main_prime_800 from "@/assets/logan-ksi-hero-mobile_x800.png"
+import hydration from "@/assets/HYDRATION_1000x.png"
+import hydrationcollection from "@/assets/PRIME_MetaMoon_group_shot_600x.jpg"
+import { ShopItem } from '@/components/ShopItem'
+import Link from 'next/link'
+import { ImageItem } from './components/ImageItem'
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js 13!</a>
-        </h1>
+    return (
+        <div className=''>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
+            <div className='w-screen h-screen  text-white flex flex-col bg-orange-500 overflow-clip relative'>
+                <Image src={main_prime}
+                    alt="banner_prime"
+                    className="object-cover object-center hidden md:block w-screen h-screen z-0"
+                />
 
-        <div className={styles.grid}>
-          <a href="https://beta.nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js 13</p>
-          </a>
+                <Image src={main_prime_800}
+                    alt="banner_prime"
+                    className="object-cover object-center w-screen h-sreen md:hidden z-0"
+                />
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Explore the Next.js 13 playground.</p>
-          </a>
+                <div className='flex flex-col z-10 absolute p-10 w-screen h-screen justify-center items-center md:hidden'>
+                    <div>FUEL UP.</div>
+                    <div className='font-bold text-2xl'>WELCOME TO YOUR PRIME</div>
+                    <div className='flex justify-start py-6'>
+                        <Link href={'/shop'}>
+                            <div className='py-4 bg-white text-black w-40 text-center uppercase hover:bg-transparent hover:text-white hover:outline hover:outline-1'>hydrate</div>
+                        </Link>
+                    </div>
+                </div>
 
-          <a
-            href="https://vercel.com/templates/next.js/app-directory?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>Deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
+                <div className='hidden md:flex md:flex-col z-10 md:bottom-20  absolute p-10  w-full'>
+                    <div>FUEL UP.</div>
+                    <div className='font-bold text-2xl'>WELCOME TO YOUR PRIME</div>
+                    <div className='flex justify-start py-6'>
+                        <Link href={'/shop'}>
+                            <div className='py-4 bg-white text-black w-40 text-center uppercase hover:bg-transparent hover:text-white hover:outline hover:outline-1'>hydrate</div>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
+            <div className='flex  justify-center items-center'>
+                <div className='max-w-6xl  flex flex-col py-32 space-y-10 justify-center items-center'>
+                    <Image src={hydration}
+                        alt="banner_prime"
+                        className=""
+                    />
+
+                    <div className='grid grid-cols-6 '>
+                        {ShopItem()}
+                        {ShopItem()}
+                        {ShopItem()}
+                        {ShopItem()}
+                        {ShopItem()}
+                        {ShopItem()}
+                    </div>
+
+                    <div className='flex justify-center'>
+                        <Link href={'/shop'}>
+                            <div className='py-4 bg-black text-white w-40 text-center uppercase'>More</div>
+                        </Link>
+                    </div>
+
+                    <div className='flex py-10 '>
+                        <Image src={hydrationcollection}
+                            alt="banner_prime"
+                            className=""
+                        />
+
+                        <div className='flex flex-col p-6 space-y-6'>
+                            <div className='flex justify-center items-center space-x-4 '>
+                                {ImageItem()}
+                                {ImageItem()}
+                                {ImageItem()}
+                            </div>
+                            <div className='flex justify-center items-center space-x-4'>
+                                {ImageItem()}
+                                {ImageItem()}
+                            </div>
+
+                            <div className='flex justify-center py-6'>
+                                <Link href={'/shop'}>
+                                    <div className='py-4 bg-black text-white w-40 text-center uppercase'>hydrate</div>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </main>
+    )
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
-  )
+    
 }
+
