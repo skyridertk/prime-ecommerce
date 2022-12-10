@@ -74,13 +74,13 @@ export default function Home() {
 
                         <div className='flex flex-col p-6 space-y-6'>
                             <div className='flex justify-center items-center space-x-4 '>
-                                {ImageItem()}
-                                {ImageItem()}
-                                {ImageItem()}
+                                {ImageItem({})}
+                                {ImageItem({})}
+                                {ImageItem({})}
                             </div>
                             <div className='flex justify-center items-center space-x-4'>
-                                {ImageItem()}
-                                {ImageItem()}
+                                {ImageItem({})}
+                                {ImageItem({})}
                             </div>
 
                             <div className='flex justify-center py-6'>
