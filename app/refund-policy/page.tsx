@@ -4,11 +4,11 @@ import React from 'react'
 export default function RefundPolicyPage() {
   return (
       <div className='py-32 flex flex-col'>
-          <div className='text-center font-bold text-2xl'>
+          <div className='text-center font-bold text-2xl py-10'>
               PRIME HYDRATION RETURN POLICY 
           </div>
 
-          <div className='flex justify-center'>
+          <div className='flex justify-center py-10'>
               <div className='max-w-6xl'>
                   All Prime Hydration purchases are final sale.  
                   <SectionBreaker />
