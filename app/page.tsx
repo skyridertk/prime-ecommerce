@@ -8,11 +8,24 @@ import { ShopItem } from '@/components/ShopItem'
 import Link from 'next/link'
 import { ImageItem } from './components/ImageItem'
 
+import meta_moon from '@/assets/Prime-Metamoon-ProductDetail-front_600x.png';
+import ice_pop from '@/assets/PrimeHydration_1serve_IcePop_0000_400x.png';
+import blue_raspberry from '@/assets/PrimeHydration_1serve_bluerasberry_0000_400x.png';
+import tropical_punch from '@/assets/PrimeHydration_1serve_tropicalpunch_0000_400x.png';
+import lemon_lime from '@/assets/PrimeHydration_1serve_lemonlime_0000_400x.png';
+import grape from '@/assets/PrimeHydration_1serve_grape_0000_400x.png';
+
+import Coconut_4 from '@/assets/Coconut_4.png';
+import BCC_A from '@/assets/BCAA_3.png';
+import Vitamins_3 from '@/assets/Vitamins_3.png';
+import Antioxidents_3 from '@/assets/Antioxidents_3.png';
+import Electrolytes_3 from '@/assets/Electrolytes_3.png';
+
 export default function Home() {
     return (
         <div className=''>
 
-            <div className='w-screen h-screen  text-white flex flex-col bg-orange-500 overflow-clip relative'>
+            <div className='w-screen h-screen  text-white flex flex-col bg-red-500 overflow-clip relative'>
                 <Image src={main_prime}
                     alt="banner_prime"
                     className="object-cover object-center hidden md:block w-screen h-screen z-0"
@@ -52,12 +65,13 @@ export default function Home() {
                     />
 
                     <div className='grid grid-cols-6 '>
-                        {ShopItem()}
-                        {ShopItem()}
-                        {ShopItem()}
-                        {ShopItem()}
-                        {ShopItem()}
-                        {ShopItem()}
+                        <ShopItem src={meta_moon} title={'Meta Moon'} price={'$29.99'} pack={'12 PK'} to={'/products/meta-moon'} />
+                        <ShopItem src={ice_pop} title={'Ice Pop'} price={'$29.99'} pack={'12 PK'} to={'/products/ice-pop'} />
+                        <ShopItem src={blue_raspberry} title={'Blue Raspberry'} price={'$29.99'} pack={'12 PK'} to={'/products/blue-raspberry'} />
+                        <ShopItem src={tropical_punch} title={'Tropical Punch'} price={'$29.99'} pack={'12 PK'} to={'/products/tropical-punch'} />
+                        <ShopItem src={grape} title={'Grape'} price={'$29.99'} pack={'12 PK'} to={'/products/grape'} />
+
+                        <ShopItem src={lemon_lime} title={'Lemon Lime'} price={'$29.99'} pack={'12 PK'} to={'/products/lemon-lime'} />
                     </div>
 
                     <div className='flex justify-center'>
@@ -74,13 +88,14 @@ export default function Home() {
 
                         <div className='flex flex-col p-6 space-y-6 '>
                             <div className='grid grid-cols-3 gap-5'>
-                                {ImageItem({})}
-                                {ImageItem({ })}
-                                {ImageItem({})}
+                                <ImageItem src={Coconut_4} />
+                                <ImageItem src={BCC_A} />
+                                <ImageItem src={Vitamins_3} />
+                                
                             </div>
                             <div className='grid grid-cols-2 gap-5 px-10'>
-                                {ImageItem({})}
-                                {ImageItem({})}
+                                <ImageItem src={Antioxidents_3} />
+                                <ImageItem src={Electrolytes_3} />
                             </div>
 
                             <div className='flex justify-center py-6'>

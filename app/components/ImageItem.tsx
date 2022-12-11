@@ -1,8 +1,7 @@
 import Image from 'next/image';
-import Antioxidents_3 from '@/assets/Antioxidents_3.png';
 
-export function ImageItem({width="40px", height="40px"}: {width?: string, height?: string}) {
-    return <Image src={Antioxidents_3}
+export function ImageItem({ src, width="40px", height="40px"}: {src: any, width?: string, height?: string}) {
+    return <Image src={src}
         alt="banner_prime"
         className={`w-[${width}] h-[${height}]`} />;
 }

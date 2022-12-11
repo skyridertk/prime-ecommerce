@@ -15,7 +15,7 @@ import { ImageItem } from '@/components/ImageItem';
 export default function page() {
     const [open, setOpen] = React.useState(true);
     return (
-        <div className='py-32 flex p-10 justify-center items-center'>
+        <div className='py-32 flex p-10 justify-center flex-col items-center'>
             <div className='max-w-6xl flex'>
                 <Lightbox
                     styles={{ container: { backgroundColor: "rgba(255, 255, 255, .8)" }, thumbnailsContainer: { backgroundColor: "rgba(255, 255, 255, .8)" }, thumbnail: { backgroundColor: "rgba(255, 255, 255, .8)", border: "1px solid black" }, thumbnailsTrack: { backgroundColor: "rgba(255, 255, 255, .8)" } }}

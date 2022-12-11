@@ -1,34 +1,35 @@
 import React from 'react'
 
 import { CarouselItem } from '@/components/CarouselItem';
-import meta_moon_front from '@/assets/Prime-Metamoon-ProductDetail-front_1799x1799.png';
-import meta_moon_side from '@/assets/Prime-Metamoon-ProductDetail-side_1799x1799.png';
-import meta_moon_back from '@/assets/Prime-Metamoon-ProductDetail-back_1799x1799.png';
+import ice_pop_front from '@/assets/PrimeHydration_stickpack_IcePop_0000_1800x1800.png';
+import ice_pop_side from '@/assets/Prime_HydrationStick_combo_IcePop_0000_1800x1800.png';
+import ice_pop_back from '@/assets/PrimeHydration_Stick_6serve_IcePop_0002_1800x1800-back.png';
 import QuantityItem from '@/components/QuantityItem';
 import { ProductDetail } from '@/components/ProductDetail';
 import { Benefits } from '@/components/Benefits';
+import meta_moon from '@/assets/Prime-Metamoon-ProductDetail-front_600x.png';
 import ice_pop from '@/assets/PrimeHydration_1serve_IcePop_0000_400x.png';
 import blue_raspberry from '@/assets/PrimeHydration_1serve_bluerasberry_0000_400x.png';
 import lemon_lime from '@/assets/PrimeHydration_1serve_lemonlime_0000_400x.png';
-import grape from '@/assets/PrimeHydration_1serve_grape_0000_400x.png';
-import { ShopItem } from '@/components/ShopItem';
 import { Recommendation } from '@/components/Recommendation';
+import { ShopItem } from '@/components/ShopItem';
 
-export default function MetaMoonPage() {
+export default function IcePopStickPage() {
 
     return (
-        <div className='py-32 p-10 justify-center items-center flex flex-col'>
+        <div className='py-32 flex p-10 justify-center flex-col items-center'>
             <div className='max-w-6xl flex'>
 
-                <CarouselItem front={meta_moon_front} side={meta_moon_side} back={meta_moon_back} />
+                <CarouselItem front={ice_pop_front} side={ice_pop_side} back={ice_pop_back} />
 
                 <div className='w-5/12 px-10 space-y-4'>
-                    <ProductDetail title={'Meta Moon'} price="$29.99" description="Pay in 4 interest-free installments for orders over $50.00">
+                    <ProductDetail title={'Ice Pop'} price="$13.99" description="Pay in 4 interest-free installments for orders over $50.00">
                         <ul className='py-4 list-disc px-5'>
                             <li>Zero added sugar</li>
                             <li>20 Calories</li>
+                            <li>250 mg BCAA</li>
+                            <li>Antioxidants + Electrolytes</li>
                             <li>10% Coconut Water</li>
-                            <li>Electrolytes</li>
                         </ul>
                     </ProductDetail>
 
@@ -46,15 +47,19 @@ export default function MetaMoonPage() {
             <Recommendation>
                 <div className='grid grid-cols-4 max-w-4xl'>
                     <ShopItem src={ice_pop} title={'Ice Pop'} price={'$29.99'} pack={'12 PK'} to={'/products/ice-pop'} />
+                    <ShopItem src={meta_moon} title={'Meta Moon'} price={'$29.99'} pack={'12 PK'} to={'/products/meta-moon'} />
                     <ShopItem src={blue_raspberry} title={'Blue Raspberry'} price={'$29.99'} pack={'12 PK'} to={'/products/blue-raspberry'} />
-                    <ShopItem src={grape} title={'Grape'} price={'$29.99'} pack={'12 PK'} to={'/products/grape'} />
                     <ShopItem src={lemon_lime} title={'Lemon Lime'} price={'$29.99'} pack={'12 PK'} to={'/products/lemon-lime'} />
                 </div>
             </Recommendation>
         </div>
     )
 
-}
 
+
+
+
+
+}
 
 
