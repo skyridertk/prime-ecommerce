@@ -72,13 +72,13 @@ export default function Home() {
                             className=""
                         />
 
-                        <div className='flex flex-col p-6 space-y-6'>
-                            <div className='flex justify-center items-center space-x-4 '>
+                        <div className='flex flex-col p-6 space-y-6 '>
+                            <div className='grid grid-cols-3 gap-5'>
                                 {ImageItem({})}
-                                {ImageItem({})}
+                                {ImageItem({ })}
                                 {ImageItem({})}
                             </div>
-                            <div className='flex justify-center items-center space-x-4'>
+                            <div className='grid grid-cols-2 gap-5 px-10'>
                                 {ImageItem({})}
                                 {ImageItem({})}
                             </div>

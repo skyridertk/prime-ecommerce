@@ -24,7 +24,7 @@ const SearchItem = ({ icon }: { icon: React.ReactNode }) => {
                 <div className="py-5">
                     <div>
                         <input type="text" placeholder="Search..." className="uppercase font-bold text-2xl w-9/12 outline-none" />
-                        <button className="w-3/12" onClick={() => setHeight(500)}>Close</button>
+                        <button className="w-3/12" onClick={() => setVisible(false)}>Close</button>
                     </div>
 
                     <div className='flex py-10'>
