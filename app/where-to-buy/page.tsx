@@ -1,13 +1,13 @@
-import React from 'react'
+import Mapview from '@/components/Mapview'
 
-export default function page() {
-    return (
-    
-      <div className='py-16'>
-          <div className='h-screen w-screen flex justify-center items-center'>
-              Come Back Another Time
+export default function WhereToBuyPage() {
+  return (
+      <div className='py-32 flex flex-col space-y-8'>
+          <div className='text-center text-2xl font-bold'>
+              Where to buy
           </div>
-            </div>
-      
+
+          <Mapview />
+    </div>
   )
 }
