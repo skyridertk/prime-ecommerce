@@ -25,7 +25,7 @@ export default function Home() {
     return (
         <div className=''>
 
-            <div className='w-screen h-screen  text-white flex flex-col bg-red-500 overflow-clip relative'>
+            <div className='w-screen h-screen  text-white flex flex-col overflow-clip relative'>
                 <Image src={main_prime}
                     alt="banner_prime"
                     className="object-cover object-center hidden md:block w-screen h-screen z-0"
