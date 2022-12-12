@@ -16,6 +16,7 @@ import { FooterItem } from './FooterItem'
 import Link from 'next/link'
 import { LeftItem } from './LeftItem'
 import { BiMenuAltLeft } from 'react-icons/bi'
+import { FooterPopButtonItem } from './FooterItemPopButton'
 
 
 function classNames(...classes: any[]) {
@@ -25,121 +26,123 @@ function classNames(...classes: any[]) {
 export default function Header() {
     return (
         <div className='fixed z-20 w-full shadow-xl'>
-            <Popover className="relative bg-white">
-                <div className="mx-auto max-w-7xl px-4 sm:px-6">
-                    <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <Popover className="relative bg-white z-0">
+                {({ open }) => (
+                    <>
+                        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+                            <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
 
-                        <div className="-my-2 -mr-2 md:hidden">
-                            <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                                <span className="sr-only">Open menu</span>
-                                <BiMenuAltLeft className="h-6 w-6" aria-hidden="true" />
-                            </Popover.Button>
-                        </div>
-                        <Popover.Group as="nav" className="hidden space-x-10 md:flex ">
-                            <Popover className="relative">
-                                {({ open }) => (
-                                    <>
+                                <div className="-my-2 -mr-2 md:hidden">
+                                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                        <span className="sr-only">Open menu</span>
+                                        <BiMenuAltLeft className="h-6 w-6" aria-hidden="true" />
+                                    </Popover.Button>
+                                </div>
+                                <Popover.Group as="nav" className="hidden space-x-10 md:flex z-0">
+                                    <Popover className="relative z-0">
 
-                                        <Popover.Button
-                                            className={classNames(
-                                                open ? 'text-gray-900' : 'text-gray-500',
-                                                'uppercase group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-                                            )}
-                                        >
-                                            <span>Shop</span>
+                                        <>
 
-                                        </Popover.Button>
+                                            <Popover.Button
+                                                className={classNames(
+                                                    open ? 'text-gray-900' : 'text-gray-500',
+                                                    'uppercase group inline-flex items-center rounded-md bg-white text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:text-indigo-500'
+                                                )}
+                                            >
+                                                <span>Shop</span>
 
-                                        <Transition
-                                            as={Fragment}
-                                            enter="transition ease-out duration-200"
-                                            enterFrom="opacity-0 translate-y-1"
-                                            enterTo="opacity-100 translate-y-0"
-                                            leave="transition ease-in duration-150"
-                                            leaveFrom="opacity-100 translate-y-0"
-                                            leaveTo="opacity-0 translate-y-1"
-                                        >
-                                            <Popover.Panel className="absolute z-10 mt-3 w-screen max-w-7xl transform px-2 sm:px-0lg:ml-0 lg:-translate-x-[50px]">
-                                                <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                                                    <div className="relative grid grid-cols-5 gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-                                                        <div className=''>
+                                            </Popover.Button>
 
-                                                            {FooteritemHeader({ title: 'Drinks' })}
-                                                            {FooterItem({ title: 'Meta Moon', link: '/products/meta-moon' })}
-                                                            {FooterItem({ title: 'Ice Pop', link: '/products/ice-pop' })}
-                                                            {FooterItem({ title: 'Blue Raspberry', link: '/products/blue-raspberry' })}
-                                                            {FooterItem({ title: 'Orange', link: '/products/orange' })}
-                                                            {FooterItem({ title: 'Tropical Punch', link: '/products/tropical-punch' })}
-                                                            {FooterItem({ title: 'Lemon Lime', link: '/products/lemon-lime' })}
-                                                            {FooterItem({ title: 'Grape', link: '/products/grape' })}
-                                                        </div>
-                                                        <div className=''>
+                                            <Transition
+                                                as={Fragment}
+                                                enter="transition ease-out duration-200"
+                                                enterFrom="opacity-0 translate-y-1"
+                                                enterTo="opacity-100 translate-y-0"
+                                                leave="transition ease-in duration-150"
+                                                leaveFrom="opacity-100 translate-y-0"
+                                                leaveTo="opacity-0 translate-y-1"
+                                            >
+                                                <Popover.Panel className="absolute z-0 mt-3 w-screen max-w-7xl transform px-2 sm:px-0lg:ml-0 lg:-translate-x-[50px] translate-y-6">
+                                                    <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                                                        <div className="relative grid grid-cols-5 gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                                            <div>
+                                                                <FooteritemHeader title='Drinks' />
+                                                                <FooterPopButtonItem title='Meta Moon' link='/products/meta-moon' />
+                                                                <FooterPopButtonItem title='Ice Pop' link='/products/ice-pop' />
+                                                                <FooterPopButtonItem title='Blue Raspberry' link='/products/blue-raspberry' />
+                                                                <FooterPopButtonItem title='Orange' link='/products/orange' />
+                                                                <FooterPopButtonItem title='Tropical Punch' link='/products/tropical-punch' />
+                                                                <FooterPopButtonItem title='Lemon Lime' link='/products/lemon-lime' />
+                                                                <FooterPopButtonItem title='Grape' link='/products/grape' />
+                                                            </div>
+                                                            <div>
 
-                                                            {FooteritemHeader({ title: 'Hydration Sticks' })}
-                                                            {FooterItem({ title: 'Ice Pop', link: '/products/ice-pop' })}
-                                                            {FooterItem({ title: 'Blue Raspberry', link: '/products/blue-raspberry' })}
-                                                            {FooterItem({ title: 'Tropical Punch', link: '/products/tropical-punch' })}
-                                                            {FooterItem({ title: 'Lemon Lime', link: '/products/lemon-lime' })}
-                                                        </div>
-                                                        <div className='flex col-span-3  space-x-5'>
-                                                            {ShopDropDownItem({ image: <Image src={meta_moon} alt="test" />, title: 'Meta moon', to: '/products/meta-moon' })}
+                                                                <FooteritemHeader title='Hydration Sticks' />
+                                                                <FooterPopButtonItem title='Ice Pop' link='/products/ice-pop-stick' />
+                                                                <FooterPopButtonItem title='Blue Raspberry' link='/products/blue-raspberry-stick' />
+                                                                <FooterPopButtonItem title='Tropical Punch' link='/products/tropical-punch-stick' />
+                                                                <FooterPopButtonItem title='Lemon Lime' link='/products/lemon-lime-stick' />
 
-                                                            {ShopDropDownItem({ image: <Image src={hydration} alt="test" />, title: 'hyration', to: '/shop' })}
+                                                            </div>
+                                                            <div className='flex col-span-3  space-x-5'>
+                                                                {ShopDropDownItem({ image: <Image src={meta_moon} alt="test" />, title: 'Meta moon', to: '/products/meta-moon' })}
+
+                                                                {ShopDropDownItem({ image: <Image src={hydration} alt="test" />, title: 'hyration', to: '/shop' })}
 
 
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </Popover.Panel>
-                                        </Transition>
-                                    </>
-                                )}
-                            </Popover>
+                                                </Popover.Panel>
+                                            </Transition>
+                                        </>
+
+                                    </Popover>
 
 
-                            {LeftItem({ title: 'about prime', to: '/about' })}
-                            {LeftItem({ title: 'where to buy', to: '/where-to-buy' })}
+                                    {LeftItem({ title: 'about prime', to: '/about' })}
+                                    {LeftItem({ title: 'where to buy', to: '/where-to-buy' })}
 
-                        </Popover.Group>
-                        <div className="flex justify-center lg:w-0 lg:flex-1 ">
-                            <Link href={'/'}>
-                                <span className="sr-only">PRIME</span>
-                                <Image
-                                    className="h-8 w-auto sm:h-10"
-                                    src={prime_logo}
-                                    alt=""
-                                />
-                            </Link>
-                        </div>
-                        <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0 space-x-6">
-                            <div className='flex space-x-2 justify-center items-center'>
-                                <div >Ship to</div>
-                                <Link href={'/'}>
-                                    <div className='outline outline-1 px-2'>US</div>
-                                </Link>
-                                <Link href={'/'}>
-                                    <div className='outline outline-1 px-2'>UK</div>
-                                </Link>
+                                </Popover.Group>
+                                <div className="flex justify-center lg:w-0 lg:flex-1 ">
+                                    <Link href={'/'}>
+                                        <span className="sr-only">PRIME</span>
+                                        <Image
+                                            className="h-8 w-auto sm:h-10"
+                                            src={prime_logo}
+                                            alt=""
+                                        />
+                                    </Link>
+                                </div>
+                                <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0 space-x-6">
+                                    <div className='flex space-x-2 justify-center items-center'>
+                                        <div >Ship to</div>
+                                        <Link href={'/'}>
+                                            <div className='outline outline-1 px-2'>US</div>
+                                        </Link>
+                                        <Link href={'/'}>
+                                            <div className='outline outline-1 px-2'>UK</div>
+                                        </Link>
+                                    </div>
+                                    {LinkIcon({ icon: <BsPersonCircle className=' text-2xl ' />, to: '/account' })}
+                                    <SearchItem icon={<AiOutlineSearch className=' text-2xl ' />} />
+                                    <CartItem icon={<AiOutlineShoppingCart className=' text-2xl ' />} />
+                                </div>
                             </div>
-                            {LinkIcon({ icon: <BsPersonCircle className=' text-2xl ' />, to: '/account' })}
-                            <SearchItem icon={<AiOutlineSearch className=' text-2xl ' />} />
-                            <CartItem icon={<AiOutlineShoppingCart className=' text-2xl '/>} />
                         </div>
-                    </div>
-                </div>
 
-                <Transition
-                    as={Fragment}
-                    enter="duration-200 ease-out"
-                    enterFrom="opacity-0 scale-95"
-                    enterTo="opacity-100 scale-100"
-                    leave="duration-100 ease-in"
-                    leaveFrom="opacity-100 scale-100"
-                    leaveTo="opacity-0 scale-95"
-                >
-                    <Popover.Panel focus className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
-                        <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-                            {/* <div className="px-5 pt-5 pb-6">
+                        <Transition
+                            as={Fragment}
+                            enter="duration-200 ease-out"
+                            enterFrom="opacity-0 scale-95"
+                            enterTo="opacity-100 scale-100"
+                            leave="duration-100 ease-in"
+                            leaveFrom="opacity-100 scale-100"
+                            leaveTo="opacity-0 scale-95"
+                        >
+                            <Popover.Panel focus className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
+                                <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+                                    {/* <div className="px-5 pt-5 pb-6">
                                 <div className="flex items-center justify-between">
                                     <div>
                                         <img
@@ -204,9 +207,12 @@ export default function Header() {
                                     </p>
                                 </div>
                             </div> */}
-                        </div>
-                    </Popover.Panel>
-                </Transition>
+                                </div>
+                            </Popover.Panel>
+                        </Transition>
+
+                    </>)}
+
             </Popover>
         </div>
     )
