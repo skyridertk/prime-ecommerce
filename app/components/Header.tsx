@@ -25,7 +25,7 @@ function classNames(...classes: any[]) {
 
 export default function Header() {
     return (
-        <div className='fixed z-20 w-full shadow-xl'>
+        <div className='fixed z-20 w-full shadow-sm border border-b-2 border-gray-200'>
             <Popover className="relative bg-white z-0">
                 {({ open }) => (
                     <>

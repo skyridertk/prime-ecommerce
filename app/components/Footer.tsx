@@ -49,8 +49,8 @@ export function Footer() {
                 </div>
 
                 <div className='space-y-4'>
-                    <input className='py-4 px-6 w-full outline outline-1' placeholder='Enter your email address' />
-                    <input className='py-4 px-6 w-full outline outline-1' placeholder='Phone number' />
+                    <input className='py-4 px-6 w-full outline outline-1 text-black' placeholder='Enter your email address' />
+                    <input className='py-4 px-6 w-full outline outline-1 text-black' placeholder='Phone number' />
                     <div className='text-xs flex items-start space-x-2 p-2 py-4 bg-gray-900'>
                         <input type='checkbox' />
                         <div className='inline-block'>By signing up, you agree to receive marketing text messages from Prime Hydration at the number used, including messages sent by autodialer. Consent is not a condition of purchase. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel. View our Privacy Policy and Terms of Service.</div>
