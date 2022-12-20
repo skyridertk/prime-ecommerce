@@ -145,7 +145,7 @@ export default function Mapview() {
 
     return (
        
-            <div className='flex justify-center'>
+            <div className='flex justify-center px-4 md:px-0'>
                 <div className='grid grid-cols-1  w-screen outline outline-1 outline-gray-300 p-4 max-w-7xl divide-y divide-gray-300'>
                     <div className='p-4 flex items-center space-x-2'>
                         <div className='w-72'>
@@ -191,7 +191,7 @@ export default function Mapview() {
                     </div>
 
                     <div className='flex justify-center '>
-                        <div className='w-full grid grid-cols-2 max-w-7xl divide-x divide-gray-300'>
+                        <div className='w-full grid grid-col-1 md:grid-cols-2 max-w-7xl divide-x divide-gray-300'>
                             <div className='space-y-6 py-10 text-center'>
                                 <div className='text-center'>No locations found near you, <br />
                                     but we'd love to change that.</div>

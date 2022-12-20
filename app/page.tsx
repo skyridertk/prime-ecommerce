@@ -58,13 +58,13 @@ export default function Home() {
             </div>
 
             <div className='flex  justify-center items-center'>
-                <div className='max-w-6xl  flex flex-col py-32 space-y-10 justify-center items-center'>
+                <div className='w-full md:max-w-6xl  flex flex-col py-32 space-y-10 justify-center items-center px-4'>
                     <Image src={hydration}
                         alt="banner_prime"
                         className=""
                     />
 
-                    <div className='grid grid-cols-6 '>
+                    <div className='grid grid-cols-2 md:grid-cols-3 lg:cgrid-cols-6 '>
                         <ShopItem src={meta_moon} title={'Meta Moon'} price={'$29.99'} pack={'12 PK'} to={'/products/meta-moon'} />
                         <ShopItem src={ice_pop} title={'Ice Pop'} price={'$29.99'} pack={'12 PK'} to={'/products/ice-pop'} />
                         <ShopItem src={blue_raspberry} title={'Blue Raspberry'} price={'$29.99'} pack={'12 PK'} to={'/products/blue-raspberry'} />
@@ -80,7 +80,7 @@ export default function Home() {
                         </Link>
                     </div>
 
-                    <div className='flex py-10 '>
+                    <div className='flex py-10 flex-col md:flex-row '>
                         <Image src={hydrationcollection}
                             alt="banner_prime"
                             className=""

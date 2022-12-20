@@ -3,8 +3,8 @@ import React from 'react'
 
 export default function About() {
     return (
-      <div className='py-20  flex justify-center items-center bg-yellow-50-500 w-screen'>
-          <div className='max-w-6xl'>
+      <div className='py-20  flex justify-center items-center p-5'>
+          <div className='xl:max-w-6xl'>
               <div className='font-bold text-center text-2xl py-6'>
                   About Prime Hydration
               </div>

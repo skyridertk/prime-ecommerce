@@ -8,7 +8,7 @@ import { SocialItem } from './SocialItem';
 
 export function Footer() {
     return <div className='bg-black text-white p-20'>
-        <div className='grid grid-cols-3  gap-10'>
+        <div className='grid grid-cols-1 md:grid-cols-3  gap-10'>
             <div className='space-y-4'>
                 {FooterTitleHeader({ title: 'ABOUT PRIME HYDRATION' })}
                 <div className='text-sm'>
@@ -20,7 +20,7 @@ export function Footer() {
                     {SocialItem({ icon: <FaTwitter />, link: 'https://twitter.com/primehydration' })}
                 </div>
             </div>
-            <div className=' grid grid-cols-2 gap-5'>
+            <div className=' grid grid-cols-1 md:grid-cols-2 gap-5'>
                 <div className=''>
                     {FooteritemHeader({ title: 'Drinks' })}
                     {FooterItem({ title: 'Meta Moon', link: '/products/meta-moon' })}
@@ -42,7 +42,7 @@ export function Footer() {
                 </div>
             </div>
 
-            <div className='space-y-6'>
+            <div className='hidden md:block space-y-6'>
                 {FooterTitleHeader({ title: 'newsletter' })}
                 <div>
                     Subscribe to receive updates, access to exclusive deals, and more.
